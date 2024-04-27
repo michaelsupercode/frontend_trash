@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, createContext } from "react";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 import "./scss/main.scss";
 import Nav from "./components/nav/Nav";
 
@@ -11,6 +12,8 @@ import Register from "./pages/register/Register";
 import AddProduct from "./pages/addProduct/AddProduct";
 import Wishlist from "./pages/wishlist/Wishlist";
 import DetailPage from "./pages/detailPage/DetailPage";
+
+if (process.env.NODE_ENV === 'production') disableReactDevTools ()
 
 const newToken = createContext({});
 const newUserId = createContext({});
